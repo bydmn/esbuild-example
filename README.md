@@ -1,0 +1,1 @@
+example for [esbuild](https://github.com/evanw/esbuild)
