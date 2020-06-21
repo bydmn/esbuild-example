@@ -9,12 +9,14 @@
     "build": "esbuild src/index.tsx --sourcemap --bundle '--define:process.env.NODE_ENV=\"development\"' --outfile=dist/index.js",
     "postbuild": "cp src/index.html dist/index.html",
     "build:prod": "esbuild src/index.tsx --bundle '--define:process.env.NODE_ENV=\"production\"' --minify --outfile=dist/index.js",
+    "postbuild:prod": "cp src/index.html dist/index.html",
     "type-check": "tsc --lib 'DOM,ESNext' --esModuleInterop --noEmit --jsx \"react\" ./src/index.tsx",
     "test": "npm run type-check"
   },
   "author": "bydmn",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^14.0.13",
     "@types/react": "^16.9.38",
     "@types/react-dom": "^16.9.8",
     "esbuild": "^0.5.3",

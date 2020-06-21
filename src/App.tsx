@@ -7,6 +7,7 @@ export const App: React.FC = () => {
   return (
     <>
       <h1>Hello, world!</h1>
+      <div>environment: {process.env.NODE_ENV}</div>
       <div>count: {count}</div>
       <ul>
         <li><button onClick={increment}>increment</button></li>
