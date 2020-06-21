@@ -1,0 +1,28 @@
+{
+  "name": "esbuild-example",
+  "version": "1.0.0",
+  "description": "example React.js project with esbuild",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm run build",
+    "start": "serve -l 3000 ./dist",
+    "build": "esbuild src/index.tsx --bundle '--define:process.env.NODE_ENV=\"development\"' --outfile=dist/index.js",
+    "postbuild": "cp src/index.html dist/index.html",
+    "build:prod": "esbuild src/index.tsx --bundle '--define:process.env.NODE_ENV=\"production\"' --minify --outfile=dist/index.js",
+    "type-check": "tsc --lib 'DOM,ESNext' --esModuleInterop --noEmit --jsx \"react\" ./src/index.tsx",
+    "test": "npm run type-check"
+  },
+  "author": "bydmn",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^16.9.38",
+    "@types/react-dom": "^16.9.8",
+    "esbuild": "^0.5.3",
+    "serve": "^11.3.2",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
