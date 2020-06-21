@@ -6,7 +6,7 @@
   "scripts": {
     "prestart": "npm run build",
     "start": "serve -l 3000 ./dist",
-    "build": "esbuild src/index.tsx --bundle '--define:process.env.NODE_ENV=\"development\"' --outfile=dist/index.js",
+    "build": "esbuild src/index.tsx --sourcemap --bundle '--define:process.env.NODE_ENV=\"development\"' --outfile=dist/index.js",
     "postbuild": "cp src/index.html dist/index.html",
     "build:prod": "esbuild src/index.tsx --bundle '--define:process.env.NODE_ENV=\"production\"' --minify --outfile=dist/index.js",
     "type-check": "tsc --lib 'DOM,ESNext' --esModuleInterop --noEmit --jsx \"react\" ./src/index.tsx",
